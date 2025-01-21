@@ -20,6 +20,11 @@ COPY . /var/www/html
 # Set permissions for Laravel storage and cache
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
+# Ensure the directories exist
+RUN mkdir -p /var/www/html/storage /var/www/html/bootstrap/cache
+
+
+
 # Expose port 80 for Apache
 EXPOSE 80
 
